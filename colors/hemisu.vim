@@ -27,6 +27,7 @@ let s:middleDarkGrey   = { "gui": "#777777", "cterm": "241" }
 let s:middleLightGrey  = { "gui": "#999999", "cterm": "246" }
 let s:lightGrey        = { "gui": "#BBBBBB", "cterm": "249" }
 let s:darkGrey         = { "gui": "#444444", "cterm": "238" }
+let s:cursorColor      = { "gui": "#eeeeff", "cterm": "195" }
 
 let s:darkPink         = { "gui": "#63001C", "cterm": "88"  }
 let s:middleDarkPink   = { "gui": "#FF0055", "cterm": "197" }
@@ -101,8 +102,9 @@ endfunction
 "}}}
 " Highlights - Vim >= 7 ------------------------------------{{{
 if version >= 700
-  call s:h("CursorLine",  { "bg": s:faint })
-  call s:h("MatchParen",  { "fg": s:accent1, "bg": s:faint, "gui": "bold" })
+  "call s:h("CursorLine",  { "bg": s:faint })
+  call s:h("CursorLine",  { "bg": s:cursorColor })
+  call s:h("MatchParen",  { "fg": s:accent1, "bg": s:faintGreen, "cterm": "bold" })
   call s:h("Pmenu",       { "bg": s:faint })
   call s:h("PmenuThumb",  { "bg": s:norm })
   call s:h("PmenuSBar",   { "bg": s:subtle })
@@ -127,12 +129,14 @@ call s:h("Normal",       { "fg": s:norm, "bg": s:bg })
 call s:h("NonText",      { "fg": s:subtle })
 call s:h("Cursor",       { "fg": s:bg, "bg": s:accent3 })
 call s:h("Visual",       { "bg": s:faintBlue })
-call s:h("IncSearch",    { "bg": s:faintBlue })
+"call s:h("IncSearch",    { "bg": s:faintBlue })
+call s:h("IncSearch",    { "bg": s:faintRed })
 call s:h("Search",       { "bg": s:faintGreen })
 call s:h("StatusLine",   { "fg": s:norm, "bg": s:faint, "gui": "bold", "cterm": "bold" })
 call s:h("StatusLineNC", { "fg": s:dimmed, "bg": s:faint })
 call s:h("SignColumn",   { "fg": s:norm })
-call s:h("VertSplit",    { "fg": s:subtle, "bg": s:faint })
+"call s:h("VertSplit",    { "fg": s:subtle, "bg": s:faint })
+call s:h("VertSplit",    { "fg": s:dimmed, "bg": s:faint })
 call s:h("TabLine",      { "fg": s:dimmed, "bg": s:faint })
 call s:h("TabLineSel",   { "gui": "bold", "cterm": "bold" })
 call s:h("Folded",       { "fg": s:comment, "bg": s:faint })
